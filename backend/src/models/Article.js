@@ -52,6 +52,9 @@ const articleSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-articleSchema.index({ 'title.uz': 'text', 'title.ru': 'text', 'title.en': 'text', 'abstract.uz': 'text', 'abstract.en': 'text' });
+articleSchema.index(
+  { 'title.uz': 'text', 'title.ru': 'text', 'title.en': 'text', 'abstract.uz': 'text', 'abstract.en': 'text' },
+  { default_language: 'none', language_override: '_textLang' }
+);
 
 module.exports = mongoose.model('Article', articleSchema);

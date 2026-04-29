@@ -20,6 +20,17 @@ async function seed() {
     Announcement.deleteMany({}),
   ]);
 
+  // Sync indexes so any old (incompatible) text index is dropped/recreated
+  // from the current schema definitions.
+  await Promise.all([
+    User.syncIndexes(),
+    Journal.syncIndexes(),
+    Issue.syncIndexes(),
+    Article.syncIndexes(),
+    Announcement.syncIndexes(),
+  ]);
+  console.log('[seed] Indexes synchronized.');
+
   const admin = await User.create({
     fullName: 'System Admin',
     email: 'admin@journal.uz',
