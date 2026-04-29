@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
 import { Search, Sparkles, GraduationCap, Newspaper } from 'lucide-react';
-import { stats, journals, articles, announcements } from '../api/endpoints';
+import { stats, journals, announcements } from '../api/endpoints';
 import { useLang } from '../context/LangContext';
-import { pickI18n, formatDate, authorsText } from '../utils/format';
+import { pickI18n, formatDate } from '../utils/format';
 import JournalCard from '../components/JournalCard';
 
 export default function HomePage() {
@@ -16,7 +16,6 @@ export default function HomePage() {
 
   const { data: summary } = useQuery({ queryKey: ['stats'], queryFn: stats.summary });
   const { data: jrn } = useQuery({ queryKey: ['journals', 'home'], queryFn: () => journals.list({ limit: 8 }) });
-  const { data: arts } = useQuery({ queryKey: ['articles', 'home'], queryFn: () => articles.list({ limit: 6 }) });
   const { data: news } = useQuery({ queryKey: ['announcements', 'home'], queryFn: () => announcements.list({ limit: 3 }) });
 
   const s = summary?.data || {};
@@ -104,42 +103,6 @@ export default function HomePage() {
           <Link to="/jurnallar" className="btn-outline">
             Barcha jurnallar
           </Link>
-        </div>
-      </section>
-
-      {/* LATEST ARTICLES */}
-      <section className="container-page">
-        <SectionHeader title={t('nav.articles')} link="/maqolalar" />
-        <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-gray-50 text-xs uppercase text-gray-500">
-              <tr>
-                <th className="px-4 py-3">{t('articles.title')}</th>
-                <th className="px-4 py-3">{t('articles.authors')}</th>
-                <th className="px-4 py-3">{t('articles.journal')}</th>
-                <th className="px-4 py-3 text-right">{t('common.year')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {(arts?.data?.items || []).map((a) => (
-                <tr key={a._id} className="border-t border-gray-100 hover:bg-gray-50">
-                  <td className="px-4 py-3">
-                    <Link to={`/maqolalar/${a._id}`} className="font-medium text-primary hover:underline">
-                      {pickI18n(a.title, lang)}
-                    </Link>
-                  </td>
-                  <td className="px-4 py-3 text-gray-600">{authorsText(a.authors, lang)}</td>
-                  <td className="px-4 py-3 text-gray-600">{pickI18n(a.journal?.title, lang)}</td>
-                  <td className="px-4 py-3 text-right text-gray-500">
-                    {a.publishedAt ? new Date(a.publishedAt).getFullYear() : '—'}
-                  </td>
-                </tr>
-              ))}
-              {!arts?.data?.items?.length && (
-                <tr><td colSpan={4} className="px-4 py-10 text-center text-gray-400">{t('common.noData')}</td></tr>
-              )}
-            </tbody>
-          </table>
         </div>
       </section>
 
