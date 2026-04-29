@@ -17,6 +17,7 @@ const journalSchema = new mongoose.Schema(
       default: 'quarterly',
     },
     indexedIn: [{ type: String, trim: true }],
+    category: { type: String, trim: true, default: '' },
     chiefEditor: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     editorialBoard: [
       {

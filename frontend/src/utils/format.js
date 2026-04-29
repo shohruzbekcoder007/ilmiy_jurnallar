@@ -59,3 +59,31 @@ export const INDEX_COLORS = {
   WoS: 'bg-green-100 text-green-700',
   OAK: 'bg-orange-100 text-orange-700',
 };
+
+export const CATEGORY_META = {
+  innovatsiyalar:    { label: 'INNOVATSIYALAR',    color: 'bg-cyan-500' },
+  moliya:            { label: 'MOLIYA',            color: 'bg-orange-500' },
+  digital_economy:   { label: 'DIGITAL ECONOMY',   color: 'bg-blue-600' },
+  sugurta:           { label: "SUG'URTA",          color: 'bg-rose-500' },
+  mehnat:            { label: 'MEHNAT',            color: 'bg-purple-600' },
+  ekologiya:         { label: 'EKOLOGIYA',         color: 'bg-emerald-500' },
+  default:           { label: 'JURNAL',            color: 'bg-primary' },
+};
+
+export function categoryMeta(key) {
+  return CATEGORY_META[key] || CATEGORY_META.default;
+}
+
+const COVER_GRADIENTS = {
+  innovatsiyalar:  'from-cyan-500 to-blue-600',
+  moliya:          'from-orange-400 to-amber-600',
+  digital_economy: 'from-blue-600 to-indigo-700',
+  sugurta:         'from-rose-500 to-red-600',
+  mehnat:          'from-purple-500 to-fuchsia-700',
+  ekologiya:       'from-emerald-500 to-teal-700',
+  default:         'from-primary-600 to-primary-800',
+};
+
+export function coverGradient(key) {
+  return COVER_GRADIENTS[key] || COVER_GRADIENTS.default;
+}

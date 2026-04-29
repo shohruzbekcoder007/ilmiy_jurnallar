@@ -1,76 +1,116 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import { BookOpen, FileText, Users, Download, ArrowRight, Newspaper } from 'lucide-react';
+import { Search, Sparkles, GraduationCap, Newspaper } from 'lucide-react';
 import { stats, journals, articles, announcements } from '../api/endpoints';
 import { useLang } from '../context/LangContext';
 import { pickI18n, formatDate, authorsText } from '../utils/format';
-import IndexBadge from '../components/IndexBadge';
+import JournalCard from '../components/JournalCard';
 
 export default function HomePage() {
   const { t } = useTranslation();
   const { lang } = useLang();
+  const nav = useNavigate();
+  const [q, setQ] = useState('');
+
   const { data: summary } = useQuery({ queryKey: ['stats'], queryFn: stats.summary });
-  const { data: jrn } = useQuery({ queryKey: ['journals', 'home'], queryFn: () => journals.list({ limit: 6 }) });
+  const { data: jrn } = useQuery({ queryKey: ['journals', 'home'], queryFn: () => journals.list({ limit: 8 }) });
   const { data: arts } = useQuery({ queryKey: ['articles', 'home'], queryFn: () => articles.list({ limit: 6 }) });
   const { data: news } = useQuery({ queryKey: ['announcements', 'home'], queryFn: () => announcements.list({ limit: 3 }) });
 
   const s = summary?.data || {};
 
+  const onSearch = (e) => {
+    e.preventDefault();
+    if (q.trim()) nav(`/search?q=${encodeURIComponent(q.trim())}`);
+  };
+
   return (
-    <div className="container-page space-y-12">
-      <section className="rounded-2xl bg-gradient-to-br from-primary to-primary-700 p-8 text-white shadow-md md:p-12">
-        <div className="flex items-center gap-3 mb-3">
-          <BookOpen className="h-8 w-8 text-secondary" />
-          <span className="text-sm uppercase tracking-wider text-white/80">TDIU</span>
+    <div className="-mt-6 space-y-16">
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-[#0E1F3F] text-white">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              'radial-gradient(800px 400px at 20% 10%, rgba(80,140,255,.25), transparent 60%), radial-gradient(700px 350px at 80% 80%, rgba(120,80,255,.18), transparent 60%)',
+          }}
+        />
+        <div className="container-page relative py-20 text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-blue-200 ring-1 ring-white/15">
+            <Sparkles className="h-3.5 w-3.5" /> Ilm-fan va innovatsiya
+          </span>
+
+          <h1 className="mt-5 text-4xl font-extrabold leading-tight md:text-6xl">
+            Ilmiy Jurnallar
+            <br />
+            <span className="bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent">
+              Portali
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base text-white/75 md:text-lg">
+            Iqtisodiyotning turli sohalaridagi {s.totalJournals || 12} ta nufuzli ilmiy
+            jurnalimiz bilan tanishing va o'z tadqiqotlaringizni xalqaro darajaga olib chiqing.
+          </p>
+
+          <form onSubmit={onSearch} className="mx-auto mt-8 max-w-2xl">
+            <div className="flex items-center gap-2 rounded-2xl bg-white/10 p-2 ring-1 ring-white/15 backdrop-blur focus-within:ring-2 focus-within:ring-sky-400">
+              <Search className="ml-2 h-5 w-5 text-white/60" />
+              <input
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                placeholder="Jurnal yoki mavzuni qidiring..."
+                className="flex-1 bg-transparent px-2 py-2 text-sm text-white placeholder-white/50 outline-none"
+              />
+              <button className="rounded-xl bg-sky-500 px-5 py-2 text-sm font-semibold text-white shadow hover:bg-sky-400">
+                {t('nav.search')}
+              </button>
+            </div>
+          </form>
+
+          {/* Stats inside hero */}
+          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-2 gap-8 md:grid-cols-4">
+            <HeroStat value={s.totalJournals ?? 12} label="Ilmiy jurnallar" />
+            <HeroStat value="5,000+" label="O'qituvchilar" />
+            <HeroStat value={s.totalAuthors ?? '2,000+'} label="Mualliflar" />
+            <HeroStat value={s.totalArticles ?? '10,000+'} label="Maqolalar" />
+          </div>
         </div>
-        <h1 className="text-3xl font-bold md:text-5xl">{t('hero.title')}</h1>
-        <p className="mt-4 max-w-2xl text-white/85">{t('hero.subtitle')}</p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link to="/cabinet/submit" className="btn-secondary">{t('hero.submit')}</Link>
-          <Link to="/jurnallar" className="btn-outline bg-white/10 border-white/30 text-white hover:bg-white/20">
-            {t('hero.explore')}
+      </section>
+
+      {/* JOURNALS LIST */}
+      <section className="container-page">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
+          <div className="text-xl font-bold uppercase tracking-wide text-primary md:text-2xl">
+            Toshkent davlat iqtisodiyot universiteti
+          </div>
+          <h2 className="mt-2 text-2xl font-bold text-ink md:text-3xl">
+            Ilmiy jurnallar ro'yxati
+          </h2>
+          <p className="mt-2 text-sm text-gray-500">
+            IMRAD standartlar asosida chop etiluvchi universitet nashrlari
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {(jrn?.data?.items || []).map((j) => (
+            <JournalCard key={j._id} journal={j} />
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link to="/jurnallar" className="btn-outline">
+            Barcha jurnallar
           </Link>
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <StatCard icon={<BookOpen className="h-5 w-5" />} label={t('stats.journals')} value={s.totalJournals} />
-        <StatCard icon={<FileText className="h-5 w-5" />} label={t('stats.articles')} value={s.totalArticles} />
-        <StatCard icon={<Users className="h-5 w-5" />} label={t('stats.authors')} value={s.totalAuthors} />
-        <StatCard icon={<Download className="h-5 w-5" />} label={t('stats.downloads')} value={s.totalDownloads} />
-      </section>
-
-      <section>
-        <SectionHeader title={t('nav.journals')} link="/jurnallar" />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {(jrn?.data?.items || []).map((j) => (
-            <Link to={`/jurnallar/${j.slug}`} key={j._id} className="card group">
-              <div className="flex h-32 w-full items-center justify-center rounded-lg bg-primary-50">
-                {j.coverImage ? (
-                  <img src={j.coverImage} alt="" className="h-full w-full rounded-lg object-cover" />
-                ) : (
-                  <BookOpen className="h-10 w-10 text-primary" />
-                )}
-              </div>
-              <div className="mt-3 line-clamp-2 font-semibold text-primary group-hover:underline">
-                {pickI18n(j.title, lang)}
-              </div>
-              <div className="mt-1 text-xs text-gray-500">
-                {j.issn && <span>ISSN: {j.issn}</span>}
-                {j.eissn && <span> · eISSN: {j.eissn}</span>}
-              </div>
-              <div className="mt-3 flex flex-wrap gap-1">
-                {(j.indexedIn || []).map((i) => <IndexBadge key={i} name={i} />)}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section>
+      {/* LATEST ARTICLES */}
+      <section className="container-page">
         <SectionHeader title={t('nav.articles')} link="/maqolalar" />
-        <div className="overflow-hidden rounded-xl bg-white shadow-sm">
+        <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-100">
           <table className="w-full text-left text-sm">
             <thead className="bg-gray-50 text-xs uppercase text-gray-500">
               <tr>
@@ -90,15 +130,21 @@ export default function HomePage() {
                   </td>
                   <td className="px-4 py-3 text-gray-600">{authorsText(a.authors, lang)}</td>
                   <td className="px-4 py-3 text-gray-600">{pickI18n(a.journal?.title, lang)}</td>
-                  <td className="px-4 py-3 text-right text-gray-500">{a.publishedAt ? new Date(a.publishedAt).getFullYear() : '—'}</td>
+                  <td className="px-4 py-3 text-right text-gray-500">
+                    {a.publishedAt ? new Date(a.publishedAt).getFullYear() : '—'}
+                  </td>
                 </tr>
               ))}
+              {!arts?.data?.items?.length && (
+                <tr><td colSpan={4} className="px-4 py-10 text-center text-gray-400">{t('common.noData')}</td></tr>
+              )}
             </tbody>
           </table>
         </div>
       </section>
 
-      <section>
+      {/* ANNOUNCEMENTS */}
+      <section className="container-page">
         <SectionHeader title={t('nav.announcements')} link="/elon" />
         <div className="grid gap-4 md:grid-cols-3">
           {(news?.data?.items || []).map((a) => (
@@ -114,27 +160,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white p-8 shadow-sm">
-        <h2 className="text-2xl font-bold text-primary">{t('imrad.title')}</h2>
-        <p className="mt-2 text-sm text-gray-600 max-w-3xl">
-          IMRAD — Introduction, Methods, Results, And Discussion. Bu xalqaro ilmiy maqolalar uchun standart struktura.
-        </p>
-        <Link to="/imrad" className="btn-primary mt-4">
-          {t('common.more')} <ArrowRight className="h-4 w-4" />
-        </Link>
+      {/* IMRAD CTA */}
+      <section className="container-page">
+        <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-primary-700 p-8 text-white shadow-md md:p-12">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-blue-200">
+                <GraduationCap className="h-3.5 w-3.5" /> {t('imrad.title')}
+              </div>
+              <h2 className="mt-3 text-2xl font-bold md:text-3xl">IMRAD strukturasi bo'yicha qo'llanma</h2>
+              <p className="mt-2 max-w-xl text-white/80">
+                Maqolangizni xalqaro standartlarga muvofiq tayyorlash uchun batafsil yo'riqnoma.
+              </p>
+            </div>
+            <Link to="/imrad" className="btn-secondary">
+              {t('common.more')}
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );
 }
 
-function StatCard({ icon, label, value }) {
+function HeroStat({ value, label }) {
   return (
-    <div className="card flex items-center gap-3">
-      <div className="rounded-lg bg-primary-50 p-3 text-primary">{icon}</div>
-      <div>
-        <div className="text-xs uppercase text-gray-500">{label}</div>
-        <div className="text-xl font-bold text-primary">{value ?? '—'}</div>
-      </div>
+    <div className="text-left md:text-center">
+      <div className="text-3xl font-bold text-white md:text-4xl">{value}</div>
+      <div className="mt-1 text-xs uppercase tracking-wider text-white/60">{label}</div>
     </div>
   );
 }
