@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Home",
+    "journals": "Journals",
+    "articles": "Articles",
+    "imrad": "IMRAD",
+    "announcements": "Announcements",
+    "contact": "Contact",
+    "search": "Search",
+    "login": "Sign in",
+    "register": "Register",
+    "logout": "Sign out",
+    "cabinet": "Dashboard",
+    "editor": "Editorial",
+    "admin": "Admin"
+  },
+  "hero": {
+    "title": "TSUE Scientific Journals",
+    "subtitle": "Official scientific publication platform of Tashkent State University of Economics",
+    "submit": "Submit article",
+    "explore": "Browse journals"
+  },
+  "stats": {
+    "journals": "Journals",
+    "articles": "Articles",
+    "authors": "Authors",
+    "downloads": "Downloads"
+  },
+  "common": {
+    "search": "Search...",
+    "viewAll": "View all",
+    "more": "More",
+    "loading": "Loading...",
+    "noData": "No data",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "next": "Next",
+    "back": "Back",
+    "year": "Year",
+    "language": "Language",
+    "all": "All",
+    "filter": "Filter",
+    "actions": "Actions",
+    "view": "View",
+    "download": "Download",
+    "edit": "Edit",
+    "delete": "Delete",
+    "publish": "Publish",
+    "yes": "Yes",
+    "no": "No",
+    "page": "Page",
+    "of": "/"
+  },
+  "articles": {
+    "title": "Title",
+    "authors": "Authors",
+    "abstract": "Abstract",
+    "keywords": "Keywords",
+    "journal": "Journal",
+    "issue": "Issue",
+    "doi": "DOI",
+    "udk": "UDC",
+    "pages": "Pages",
+    "language": "Language",
+    "downloadPdf": "Download PDF",
+    "viewPdf": "View PDF",
+    "citation": "Citation",
+    "related": "Related articles",
+    "filters": {
+      "year": "Year",
+      "journal": "Journal",
+      "language": "Language",
+      "search": "Title, keywords, author or DOI"
+    }
+  },
+  "journals": {
+    "issn": "ISSN",
+    "eissn": "eISSN",
+    "frequency": "Frequency",
+    "indexedIn": "Indexed in",
+    "editorialBoard": "Editorial board",
+    "issues": "Issues",
+    "submitArticle": "Submit article",
+    "freq": {
+      "monthly": "Monthly",
+      "quarterly": "Quarterly",
+      "biannual": "Biannual",
+      "annual": "Annual"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "registerTitle": "Create account",
+    "fullName": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "phone": "Phone",
+    "orcid": "ORCID",
+    "affiliation": "Affiliation",
+    "position": "Position",
+    "degree": "Academic degree",
+    "forgot": "Forgot password?",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "loginAction": "Sign in",
+    "registerAction": "Sign up",
+    "resetTitle": "Reset password",
+    "resetSent": "If an account exists, an email has been sent.",
+    "newPassword": "New password"
+  },
+  "submit": {
+    "title": "Submit article",
+    "step1": "Choose journal",
+    "step2": "Metadata",
+    "step3": "Authors",
+    "step4": "IMRAD",
+    "step5": "File upload",
+    "step6": "Review",
+    "selectJournal": "Select journal",
+    "addAuthor": "Add author",
+    "uploadPdf": "Upload PDF",
+    "coverLetter": "Cover letter",
+    "saveDraft": "Save draft",
+    "submitForReview": "Submit for review"
+  },
+  "status": {
+    "draft": "Draft",
+    "submitted": "Submitted",
+    "under_review": "Under review",
+    "revision_needed": "Revision needed",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "published": "Published"
+  },
+  "imrad": {
+    "title": "IMRAD structure",
+    "intro": "Introduction",
+    "methods": "Methodology (Methods)",
+    "results": "Results",
+    "analysis": "Analysis",
+    "discussion": "Discussion",
+    "conclusion": "Conclusion"
+  },
+  "footer": {
+    "address": "Tashkent, Uzbekistan",
+    "rights": "All rights reserved"
+  }
+}

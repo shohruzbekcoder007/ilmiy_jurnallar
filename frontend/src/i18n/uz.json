@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "journals": "Jurnallar",
+    "articles": "Maqolalar",
+    "imrad": "IMRAD",
+    "announcements": "E'lonlar",
+    "contact": "Aloqa",
+    "search": "Qidiruv",
+    "login": "Kirish",
+    "register": "Ro'yxatdan o'tish",
+    "logout": "Chiqish",
+    "cabinet": "Kabinet",
+    "editor": "Tahririyat",
+    "admin": "Boshqaruv"
+  },
+  "hero": {
+    "title": "TDIU Ilmiy Jurnallari",
+    "subtitle": "Toshkent davlat iqtisodiyot universitetining rasmiy ilmiy nashr platformasi",
+    "submit": "Maqola yuborish",
+    "explore": "Jurnallarni ko'rish"
+  },
+  "stats": {
+    "journals": "Jurnallar",
+    "articles": "Maqolalar",
+    "authors": "Mualliflar",
+    "downloads": "Yuklab olishlar"
+  },
+  "common": {
+    "search": "Qidiruv...",
+    "viewAll": "Barchasini ko'rish",
+    "more": "Batafsil",
+    "loading": "Yuklanmoqda...",
+    "noData": "Ma'lumot topilmadi",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "submit": "Yuborish",
+    "next": "Keyingi",
+    "back": "Orqaga",
+    "year": "Yil",
+    "language": "Til",
+    "all": "Barchasi",
+    "filter": "Filtrlash",
+    "actions": "Amallar",
+    "view": "Ko'rish",
+    "download": "Yuklab olish",
+    "edit": "Tahrirlash",
+    "delete": "O'chirish",
+    "publish": "Nashr qilish",
+    "yes": "Ha",
+    "no": "Yo'q",
+    "page": "Sahifa",
+    "of": "/"
+  },
+  "articles": {
+    "title": "Sarlavha",
+    "authors": "Mualliflar",
+    "abstract": "Annotatsiya",
+    "keywords": "Kalit so'zlar",
+    "journal": "Jurnal",
+    "issue": "Son",
+    "doi": "DOI",
+    "udk": "UDK",
+    "pages": "Sahifalar",
+    "language": "Til",
+    "downloadPdf": "PDF yuklab olish",
+    "viewPdf": "PDF ko'rish",
+    "citation": "Iqtibos",
+    "related": "Aloqador maqolalar",
+    "filters": {
+      "year": "Yil",
+      "journal": "Jurnal",
+      "language": "Til",
+      "search": "Sarlavha, kalit so'z, muallif yoki DOI"
+    }
+  },
+  "journals": {
+    "issn": "ISSN",
+    "eissn": "eISSN",
+    "frequency": "Davriyligi",
+    "indexedIn": "Indekslar",
+    "editorialBoard": "Tahririyat hay'ati",
+    "issues": "Sonlar",
+    "submitArticle": "Maqola yuborish",
+    "freq": {
+      "monthly": "Oylik",
+      "quarterly": "Choraklik",
+      "biannual": "Yarim yillik",
+      "annual": "Yillik"
+    }
+  },
+  "auth": {
+    "loginTitle": "Tizimga kirish",
+    "registerTitle": "Ro'yxatdan o'tish",
+    "fullName": "F.I.Sh",
+    "email": "Email",
+    "password": "Parol",
+    "confirmPassword": "Parolni tasdiqlang",
+    "phone": "Telefon",
+    "orcid": "ORCID",
+    "affiliation": "Ish joyi",
+    "position": "Lavozim",
+    "degree": "Ilmiy daraja",
+    "forgot": "Parolni unutdingizmi?",
+    "haveAccount": "Hisobingiz bormi?",
+    "noAccount": "Hisobingiz yo'qmi?",
+    "loginAction": "Kirish",
+    "registerAction": "Ro'yxatdan o'tish",
+    "resetTitle": "Parolni tiklash",
+    "resetSent": "Agar email mavjud bo'lsa, xat yuborildi.",
+    "newPassword": "Yangi parol"
+  },
+  "submit": {
+    "title": "Maqola yuborish",
+    "step1": "Jurnal tanlash",
+    "step2": "Metama'lumotlar",
+    "step3": "Mualliflar",
+    "step4": "IMRAD",
+    "step5": "Fayl yuklash",
+    "step6": "Ko'rib chiqish",
+    "selectJournal": "Jurnalni tanlang",
+    "addAuthor": "Muallif qo'shish",
+    "uploadPdf": "PDF yuklash",
+    "coverLetter": "Hamroh xat",
+    "saveDraft": "Qoralama saqlash",
+    "submitForReview": "Tahririyatga yuborish"
+  },
+  "status": {
+    "draft": "Qoralama",
+    "submitted": "Yuborilgan",
+    "under_review": "Ko'rib chiqilmoqda",
+    "revision_needed": "Qayta ishlash kerak",
+    "accepted": "Qabul qilingan",
+    "rejected": "Rad etilgan",
+    "published": "Nashr etilgan"
+  },
+  "imrad": {
+    "title": "IMRAD strukturasi",
+    "intro": "Kirish (Introduction)",
+    "methods": "Metodologiya (Methods)",
+    "results": "Natijalar (Results)",
+    "analysis": "Tahlil (Analysis)",
+    "discussion": "Muhokama (Discussion)",
+    "conclusion": "Xulosa"
+  },
+  "footer": {
+    "address": "Toshkent shahri, O'zbekiston",
+    "rights": "Barcha huquqlar himoyalangan"
+  }
+}

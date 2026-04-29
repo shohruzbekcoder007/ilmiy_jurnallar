@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Главная",
+    "journals": "Журналы",
+    "articles": "Статьи",
+    "imrad": "IMRAD",
+    "announcements": "Объявления",
+    "contact": "Контакты",
+    "search": "Поиск",
+    "login": "Войти",
+    "register": "Регистрация",
+    "logout": "Выйти",
+    "cabinet": "Кабинет",
+    "editor": "Редакция",
+    "admin": "Админ"
+  },
+  "hero": {
+    "title": "Научные журналы ТГЭУ",
+    "subtitle": "Официальная платформа научных публикаций Ташкентского государственного экономического университета",
+    "submit": "Подать статью",
+    "explore": "Смотреть журналы"
+  },
+  "stats": {
+    "journals": "Журналы",
+    "articles": "Статьи",
+    "authors": "Авторы",
+    "downloads": "Скачивания"
+  },
+  "common": {
+    "search": "Поиск...",
+    "viewAll": "Смотреть все",
+    "more": "Подробнее",
+    "loading": "Загрузка...",
+    "noData": "Нет данных",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "submit": "Отправить",
+    "next": "Далее",
+    "back": "Назад",
+    "year": "Год",
+    "language": "Язык",
+    "all": "Все",
+    "filter": "Фильтр",
+    "actions": "Действия",
+    "view": "Просмотр",
+    "download": "Скачать",
+    "edit": "Изменить",
+    "delete": "Удалить",
+    "publish": "Опубликовать",
+    "yes": "Да",
+    "no": "Нет",
+    "page": "Страница",
+    "of": "/"
+  },
+  "articles": {
+    "title": "Заголовок",
+    "authors": "Авторы",
+    "abstract": "Аннотация",
+    "keywords": "Ключевые слова",
+    "journal": "Журнал",
+    "issue": "Выпуск",
+    "doi": "DOI",
+    "udk": "УДК",
+    "pages": "Страницы",
+    "language": "Язык",
+    "downloadPdf": "Скачать PDF",
+    "viewPdf": "Просмотр PDF",
+    "citation": "Цитирование",
+    "related": "Связанные статьи",
+    "filters": {
+      "year": "Год",
+      "journal": "Журнал",
+      "language": "Язык",
+      "search": "Заголовок, ключевые слова, автор или DOI"
+    }
+  },
+  "journals": {
+    "issn": "ISSN",
+    "eissn": "eISSN",
+    "frequency": "Периодичность",
+    "indexedIn": "Индексация",
+    "editorialBoard": "Редколлегия",
+    "issues": "Выпуски",
+    "submitArticle": "Подать статью",
+    "freq": {
+      "monthly": "Ежемесячно",
+      "quarterly": "Ежеквартально",
+      "biannual": "Полугодовой",
+      "annual": "Ежегодно"
+    }
+  },
+  "auth": {
+    "loginTitle": "Вход в систему",
+    "registerTitle": "Регистрация",
+    "fullName": "ФИО",
+    "email": "Email",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "phone": "Телефон",
+    "orcid": "ORCID",
+    "affiliation": "Место работы",
+    "position": "Должность",
+    "degree": "Ученая степень",
+    "forgot": "Забыли пароль?",
+    "haveAccount": "Уже есть аккаунт?",
+    "noAccount": "Нет аккаунта?",
+    "loginAction": "Войти",
+    "registerAction": "Зарегистрироваться",
+    "resetTitle": "Сброс пароля",
+    "resetSent": "Если аккаунт существует, письмо отправлено.",
+    "newPassword": "Новый пароль"
+  },
+  "submit": {
+    "title": "Подача статьи",
+    "step1": "Выбор журнала",
+    "step2": "Метаданные",
+    "step3": "Авторы",
+    "step4": "IMRAD",
+    "step5": "Загрузка файла",
+    "step6": "Проверка",
+    "selectJournal": "Выберите журнал",
+    "addAuthor": "Добавить автора",
+    "uploadPdf": "Загрузить PDF",
+    "coverLetter": "Сопроводительное письмо",
+    "saveDraft": "Сохранить черновик",
+    "submitForReview": "Отправить в редакцию"
+  },
+  "status": {
+    "draft": "Черновик",
+    "submitted": "Отправлено",
+    "under_review": "На рассмотрении",
+    "revision_needed": "Требуется доработка",
+    "accepted": "Принято",
+    "rejected": "Отклонено",
+    "published": "Опубликовано"
+  },
+  "imrad": {
+    "title": "Структура IMRAD",
+    "intro": "Введение (Introduction)",
+    "methods": "Методология (Methods)",
+    "results": "Результаты (Results)",
+    "analysis": "Анализ (Analysis)",
+    "discussion": "Обсуждение (Discussion)",
+    "conclusion": "Заключение"
+  },
+  "footer": {
+    "address": "г. Ташкент, Узбекистан",
+    "rights": "Все права защищены"
+  }
+}
