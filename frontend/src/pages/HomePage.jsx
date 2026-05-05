@@ -42,7 +42,7 @@ export default function HomePage() {
           </span>
 
           <h1 className="mt-5 text-4xl font-extrabold leading-tight md:text-6xl">
-            Ilmiy Jurnallar
+            Ziyonashrmedia
             <br />
             <span className="bg-gradient-to-r from-sky-300 to-blue-400 bg-clip-text text-transparent">
               Portali
@@ -83,7 +83,7 @@ export default function HomePage() {
       <section className="container-page">
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <div className="text-xl font-bold uppercase tracking-wide text-primary md:text-2xl">
-            Toshkent davlat iqtisodiyot universiteti
+            Ziyonashrmedia
           </div>
           <h2 className="mt-2 text-2xl font-bold text-ink md:text-3xl">
             Ilmiy jurnallar ro'yxati

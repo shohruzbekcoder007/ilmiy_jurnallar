@@ -31,14 +31,13 @@ export default function Navbar() {
             <GraduationCap className="h-7 w-7" />
           </div>
           <div className="hidden leading-tight sm:block">
-            <div className="text-[11px] font-semibold uppercase tracking-wide text-primary">Toshkent davlat</div>
-            <div className="text-[11px] font-semibold uppercase tracking-wide text-primary">iqtisodiyot universiteti</div>
+            <div className="text-[11px] font-semibold uppercase tracking-wide text-primary">Ziyonashrmedia</div>
           </div>
         </Link>
 
         {/* Center: portal brand */}
         <Link to="/" className="hidden flex-col items-center leading-tight md:flex">
-          <div className="text-lg font-bold text-primary">TDIU ilmiy jurnallari</div>
+          <div className="text-lg font-bold text-primary">Ziyonashrmedia</div>
           <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">Ilmiy portal</div>
         </Link>
 
@@ -107,7 +106,7 @@ export default function Navbar() {
           <div className="mb-3 flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
             <div>
-              <div className="text-sm font-bold text-primary">TDIU ilmiy jurnallari</div>
+              <div className="text-sm font-bold text-primary">ziyonashrmedia</div>
               <div className="text-[10px] uppercase tracking-wider text-gray-400">Ilmiy portal</div>
             </div>
           </div>

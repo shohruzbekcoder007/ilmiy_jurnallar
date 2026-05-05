@@ -9,10 +9,10 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <BookOpen className="h-6 w-6 text-secondary" />
-            <div className="font-bold">TDIU Ilmiy Jurnallar</div>
+            <div className="font-bold">ziyonashrmedia</div>
           </div>
           <p className="text-sm text-white/80">
-            Toshkent davlat iqtisodiyot universitetining rasmiy ilmiy nashr platformasi.
+            Ziyonashrmedia rasmiy ilmiy nashr platformasi.
           </p>
         </div>
 
@@ -21,7 +21,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-white/80">
             <li className="flex items-center gap-2"><MapPin className="h-4 w-4" /> {t('footer.address')}</li>
             <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +998 (71) 000-00-00</li>
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> editor@tsue.uz</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> editor@ziyonashrmedia.uz</li>
           </ul>
         </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
-        &copy; {new Date().getFullYear()} TDIU — {t('footer.rights')}
+        &copy; {new Date().getFullYear()} Ziyonashrmedia — {t('footer.rights')}
       </div>
     </footer>
   );

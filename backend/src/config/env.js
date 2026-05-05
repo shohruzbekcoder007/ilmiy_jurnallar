@@ -32,6 +32,6 @@ module.exports = {
     secure: process.env.SMTP_SECURE === 'true',
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
-    from: process.env.EMAIL_FROM || 'Ilmiy Jurnallar <noreply@example.com>',
+    from: process.env.EMAIL_FROM || 'ziyonashrmedia <noreply@example.com>',
   },
 };

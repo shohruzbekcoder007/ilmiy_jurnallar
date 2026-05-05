@@ -1,7 +1,6 @@
-# Ilmiy Jurnallar Platformasi
+# ziyonashrmedia
 
-Scientific Journals Platform — modeled on **TDIU Ilmiy Jurnallari** (`tdiu-ilmiy-jurnallar.uz`),
-the official academic journal portal of Tashkent State University of Economics.
+ziyonashrmedia — Scientific Journals Platform.
 
 Full-stack (Node.js + Express + MongoDB + React + Vite) with multilanguage UI (UZ / RU / EN),
 JWT auth, role-based access (author / reviewer / editor / admin), Cloudinary file uploads,

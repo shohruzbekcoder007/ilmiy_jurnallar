@@ -23,14 +23,14 @@ function wrap(content) {
 <html><body style="font-family:Inter,Arial,sans-serif;background:#F5F7FA;padding:24px;">
   <div style="max-width:640px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.06)">
     <div style="background:#1A3A6E;padding:20px;color:#fff">
-      <h2 style="margin:0;font-weight:700">Ilmiy Jurnallar Platformasi</h2>
-      <div style="opacity:.85;font-size:13px">TDIU — Tashkent State University of Economics</div>
+      <h2 style="margin:0;font-weight:700">ziyonashrmedia</h2>
+      <div style="opacity:.85;font-size:13px">ziyonashrmedia</div>
     </div>
     <div style="padding:24px;color:#1F2937;line-height:1.6;font-size:14px">
       ${content}
     </div>
     <div style="background:#F5F7FA;padding:14px;text-align:center;color:#6B7280;font-size:12px">
-      &copy; ${new Date().getFullYear()} Ilmiy Jurnallar — TDIU
+      &copy; ${new Date().getFullYear()} ziyonashrmedia
     </div>
   </div>
 </body></html>`;
@@ -50,7 +50,7 @@ const templates = {
   welcome: (user) => ({
     subject: 'Xush kelibsiz / Welcome',
     html: `<h3>Salom, ${user.fullName}!</h3>
-<p>Ilmiy Jurnallar Platformasiga muvaffaqiyatli ro'yxatdan o'tdingiz.</p>
+<p>ziyonashrmedia platformasiga muvaffaqiyatli ro'yxatdan o'tdingiz.</p>
 <p>Endi maqolalar yuborishingiz mumkin.</p>`,
   }),
   articleSubmitted: (article, author) => ({
